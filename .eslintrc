@@ -1,0 +1,22 @@
+{
+    "root": true,
+    "extends": "airbnb",
+
+    "globals": {
+    },
+
+    "env": {
+        "amd": true,
+        "browser": true,
+        "node": true
+    },
+
+    "parser": "babel-eslint",
+
+    "rules": {
+        "indent": ["error", 4],
+        "comma-dangle": ["error", "never"],
+        "quotes": ["error", "single"],
+        "prefer-template": 0
+    }
+}
