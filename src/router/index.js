@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import routes from './routes'
-import { Global as middlewares } from './middleware'
+// import { Global as middlewares } from './middleware'
 
 Vue.use(Router);
 
@@ -11,6 +11,6 @@ let router = new Router({
     routes: routes
 });
 
-middlewares(router);
+// middlewares(router);
 
 export default router;
