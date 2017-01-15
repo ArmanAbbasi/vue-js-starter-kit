@@ -1,6 +1,6 @@
 {
-  "name": "VueJsEcommerceStarterKit",
-  "description": "A VueJS e-commerce starter kit. I couldn't find any full examples, so I made one.",
+  "name": "VueJsStarterKit",
+  "description": "A VueJS starter kit. I couldn't find any full examples, so I made one.",
   "author": "Arman Abbasi",
   "private": true,
   "scripts": {
