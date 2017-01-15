@@ -1,0 +1,15 @@
+{
+    "title": "Blue Slim Fit Suit",
+    "image": "/dist/images/img1.jpg",
+    "description": "This beautifully tailored suit is an essential investment.",
+    "url": "/product/1",
+    "price": "149.00",
+    "currency": "£",
+    "colors": [{
+        "color": {
+            "code": "#383540",
+            "name": "Blue"
+        }
+    }],
+    "sizes": [34, 36, 38]
+}

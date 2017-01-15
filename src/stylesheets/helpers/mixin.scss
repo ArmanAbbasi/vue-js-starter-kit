@@ -1,0 +1,33 @@
+@mixin vendor-prefix($name, $argument...) {
+    -webkit-#{$name}: #{$argument};
+    -ms-#{$name}: #{$argument};
+    -moz-#{$name}: #{$argument};
+    -o-#{$name}: #{$argument};
+    #{$name}: #{$argument};
+}
+
+@mixin background-gradient($direction, $startColor, $endColor) {
+    background: $startColor;
+    background: -webkit-linear-gradient(left,$startColor,$endColor);
+    background: -moz-linear-gradient(left,$startColor,$endColor);
+    background: -o-linear-gradient(left,$startColor,$endColor);
+    background: linear-gradient($direction,$startColor,$endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='#00ff8989', GradientType=0 );
+}
+
+@mixin font-smoothing($value) {
+    $val1: $value;
+    $val2: $value;
+
+    @if $value == 'antialiased' {
+        $val1: $value;
+        $val2: grayscale;
+    } @else {
+        $val1: $value;
+        $val2: $value;
+    }
+
+    -webkit-font-smoothing: $val1;
+    -moz-osx-font-smoothing: $val2;
+    font-smoothing: $val1;
+}

@@ -1,0 +1,64 @@
+@import './../helpers/reset.scss';
+@import './../helpers/variables.scss';
+@import './../helpers/mixin.scss';
+
+body {
+    @include font-smoothing(antialiased);
+    font-family: $fontFamily;
+    background-color: $brandColorLight;
+    color: $brandColorWhite;
+    font-size: $fontSizeBase;
+    line-height: 1.4em;
+    max-width: 960px;
+    margin: 0 auto;
+}
+button, input, select {
+    @include vendor-prefix(appearance, none);
+}
+button {
+    @include vendor-prefix(transition, transform 300ms ease, border-radius 300ms ease);
+    background-color: $brandColorDark;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: $fontSizeIcon;
+    border-radius: 0;
+    line-height: 0;
+    outline: none;
+    width: 25%;
+    vertical-align: top;
+    color: $brandColorWhite;
+    border-top: 1px solid $brandColorWhite;
+    cursor: pointer;
+    font-size: $fontSizeBase;
+}
+h1, h2 {
+    text-transform: uppercase;
+    position: relative;
+    font-weight: bold;
+    z-index: 1;
+}
+p {
+    width: 45%;
+    font-size: $fontSizeVerySmall;
+    z-index: 1;
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: $brandColorWhite;
+}
+::-webkit-input-placeholder {
+    color: rgba(34, 38, 75, 0.65);
+}
+:-moz-placeholder {
+    color: rgba(34, 38, 75, 0.65);
+    opacity: 1;
+}
+::-moz-placeholder {
+    color: rgba(34, 38, 75, 0.65);
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    color: rgba(34, 38, 75, 0.65);
+}

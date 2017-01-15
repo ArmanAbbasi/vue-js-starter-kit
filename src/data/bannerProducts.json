@@ -1,0 +1,15 @@
+[{
+    "title": "The new season",
+    "image": "dist/images/banner1.png",
+    "description": "Start your new season wardrobe here.",
+    "url": "/product/1",
+    "price": "2.50",
+    "currency": "£"
+}, {
+    "title": "Ready for fall",
+    "image": "dist/images/banner2.png",
+    "description": "It's time to break out the jackets and layer up.",
+    "url": "/product/2",
+    "price": "12.50",
+    "currency": "£"
+}]

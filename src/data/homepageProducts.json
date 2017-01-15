@@ -1,0 +1,43 @@
+[{
+    "title": "Business essentials",
+    "image": "dist/images/img1.png",
+    "description": "Show you mean business in our range of suits.",
+    "url": "/product/1",
+    "price": "2.50",
+    "currency": "£"
+}, {
+    "title": "A cut above",
+    "image": "dist/images/img3.png",
+    "description": "Fit is everything with denim.",
+    "url": "/product/2",
+    "price": "12.50",
+    "currency": "£"
+}, {
+    "title": "T-shirts",
+    "image": "dist/images/img4.png",
+    "description": "Top up your new season wardrobe.",
+    "url": "/product/3",
+    "price": "9.00",
+    "currency": "£"
+}, {
+    "title": "Girls' new in",
+    "image": "dist/images/img5.png",
+    "description": "Must-have dresses and stylish layering pieces.",
+    "url": "/product/4",
+    "price": "7.75",
+    "currency": "£"
+}, {
+    "title": "This month's offers",
+    "image": "dist/images/img6.png",
+    "description": "Save up to 40% across our range healthy drinks.",
+    "url": "/product/5",
+    "price": "12.99",
+    "currency": "£"
+}, {
+    "title": "Autumn Flowers",
+    "image": "dist/images/img7.png",
+    "description": "Bring the new season into your home.",
+    "url": "/product/6",
+    "price": "15.95",
+    "currency": "£"
+}]
