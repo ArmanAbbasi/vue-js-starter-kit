@@ -9,3 +9,7 @@ export const GET_BANNER_PRODUCTS = (state, resp) => {
 export const GET_PRODUCT_DETAILS = (state, resp) => {
     state.productDetails = resp;
 };
+
+export const API_FAILURE = (state, resp) => {
+    state.apiFailure = resp;
+};

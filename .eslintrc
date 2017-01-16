@@ -17,6 +17,7 @@
         "indent": ["error", 4],
         "comma-dangle": ["error", "never"],
         "quotes": ["error", "single"],
-        "prefer-template": 0
+        "prefer-template": 0,
+        "semi": ["error", "always"]
     }
 }

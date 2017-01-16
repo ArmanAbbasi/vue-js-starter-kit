@@ -11,7 +11,7 @@ export default context => {
     const s = isDev && Date.now();
 
     // set router's location
-    router.push(context.url)
+    router.push(context.url);
     const matchedComponents = router.getMatchedComponents();
 
     // no matched routes

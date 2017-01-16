@@ -5,4 +5,4 @@ module.exports = {
       browsers: ['last 3 versions']
     })
   ]
-}
+};
