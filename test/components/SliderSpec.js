@@ -10,7 +10,7 @@ function getRenderedText (Component, propsData) {
 
 describe('Slider', () => {
     it('has the expected component name', () => {
-        assert.equal(slider.name, 'slider');
+        assert.equal(slider.name, 'c-slider');
     });
 
     it('has all hooks created', () => {

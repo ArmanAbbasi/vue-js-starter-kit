@@ -27,7 +27,7 @@ function createRenderer (bundle) {
 }
 
 function parseIndex (template) {
-    const contentMarker = '<app></app>';
+    const contentMarker = '<app/>';
     const i = template.indexOf(contentMarker);
     return {
         head: template.slice(0, i),
