@@ -86,11 +86,7 @@ app.get('*', (req, res) => {
     renderStream.on('end', () => {
         // Parse initial store state to global namespace
         if (context.initialState) {
-            res.write(
-                `<script>window.__INITIAL_STATE__=${
-                    serialize(context.initialState, { isJSON: true })
-                    }</script>`
-            );
+            res.write(`<script>window.__INITIAL_STATE__=${serialize(context.initialState, { isJSON: true })}</script>`);
         }
         res.end(generatedHtml.tail);
         console.log(`whole request: ${Date.now() - TIME_AT_START_REQUEST}ms`);
