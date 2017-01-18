@@ -1,6 +1,6 @@
 # VueJS Starter Kit
 
-A <a href="https://vuejs.org/">VueJS 2</a> starter kit using NodeJS, WebPack, Gulp, NPM, SASS/SCSS, VueJS 2, Vuex, Axios, Routing, Server Side Rendering, Caching, ESLint, Mocha. The aim is get a production ready implementation ready for a large customer facing platform.
+A <a href="https://vuejs.org/">VueJS</a> starter kit using NodeJS, WebPack, Gulp, NPM, SASS/SCSS, VueJS, Vuex, Axios, Routing, Server Side Rendering, Caching, ESLint, Mocha. The aim is get a production ready implementation ready for a large customer facing platform.
 
 >Installation instructions
 
