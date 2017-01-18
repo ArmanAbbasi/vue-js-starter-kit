@@ -13,7 +13,7 @@ export const getBannerProducts = ({ commit }) => {
 };
 
 export const getProductDetails = ({ commit }, productId) => {
-    return api.get('/dist/data/productDetails' + productId + '.json', { productId: productId })
+    return api.get(`/dist/data/productDetails${productId}.json`, { productId: productId })
         .then((response) => commit('GET_PRODUCT_DETAILS', response))
         .catch((error) => commit('API_FAILURE', error));
 };

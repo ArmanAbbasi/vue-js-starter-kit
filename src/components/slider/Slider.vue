@@ -37,8 +37,9 @@
                 const width = children && children[0].clientWidth;
                 const currentPositionX = parseInt(/\d+/.exec(holderEl.style.transform)[0], 10);
                 const currentIdx = !currentPositionX ? 0 : (children.length * width) / currentPositionX;
+                const xNewPos = (((currentIdx + 1) >= children.length ? 0 : currentIdx + 1) * width);
 
-                holderEl.setAttribute('style', ('transform: translateX(-' + (((currentIdx + 1) >= children.length ? 0 : currentIdx + 1) * width) + 'px);'));
+                holderEl.setAttribute('style', (`transform: translateX(-${xNewPos}px);`));
             }
         }
     };
