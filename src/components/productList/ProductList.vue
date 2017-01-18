@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'product-block',
+        name: 'c-product-list',
         props: [
             'product'
         ]

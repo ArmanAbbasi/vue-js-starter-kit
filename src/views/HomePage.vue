@@ -1,35 +1,35 @@
 <template>
     <div>
-        <header-tpl></header-tpl>
+        <c-header></c-header>
         <main>
-            <search></search>
-            <slider :items="bannerProducts"></slider>
+            <c-search></c-search>
+            <c-slider :items="bannerProducts"></c-slider>
             <div id="productsContainer" class="product-container">
-                <product-block v-for="product in productDetails" :product="product"></product-block>
+                <c-product-list v-for="product in productDetails" :product="product"></c-product-list>
             </div>
-            <newsletter></newsletter>
+            <c-newsletter></c-newsletter>
         </main>
-        <footer-tpl></footer-tpl>
+        <c-footer></c-footer>
     </div>
 </template>
 
 <script>
-    import productBlock from '../components/productListingItem/ProductListingItem.vue';
-    import headerTpl from '../components/header/Header.vue';
-    import footerTpl from '../components/footer/Footer.vue';
-    import slider from '../components/slider/Slider.vue';
-    import newsletter from '../components/newsletter/Newsletter.vue';
-    import search from '../components/search/Search.vue';
+    import cProductList from '../components/productList/ProductList.vue';
+    import cHeader from '../components/header/Header.vue';
+    import cFooter from '../components/footer/Footer.vue';
+    import cSlider from '../components/slider/Slider.vue';
+    import cNewsletter from '../components/newsletter/Newsletter.vue';
+    import cSearch from '../components/search/Search.vue';
 
     const homePage = {
-        name: 'home-page',
+        name: 'home-page-view',
         components: {
-            productBlock,
-            slider,
-            newsletter,
-            search,
-            headerTpl,
-            footerTpl
+            cProductList,
+            cSlider,
+            cNewsletter,
+            cSearch,
+            cHeader,
+            cFooter
         },
         methods: {
             getHomePageProducts() {

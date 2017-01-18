@@ -9,6 +9,6 @@
 
 <script>
     export default {
-        name: 'header-tpl'
+        name: 'c-header'
     };
 </script>

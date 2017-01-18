@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        name: 'slider',
+        name: 'c-slider',
         props: [
             'items'
         ],

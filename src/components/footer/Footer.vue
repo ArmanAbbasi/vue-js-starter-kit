@@ -4,6 +4,6 @@
 
 <script>
     export default {
-        name: 'footer-tpl'
+        name: 'v-footer'
     };
 </script>

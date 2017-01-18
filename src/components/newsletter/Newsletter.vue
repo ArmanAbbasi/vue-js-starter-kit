@@ -7,6 +7,6 @@
 
 <script>
     export default {
-        name: 'newsletter'
+        name: 'c-newsletter'
     };
 </script>

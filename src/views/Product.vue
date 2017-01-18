@@ -1,8 +1,8 @@
 <template>
     <div>
-        <header-tpl></header-tpl>
+        <c-header></c-header>
         <main class="product-container">
-            <search></search>
+            <c-search></c-search>
             <div class="image-container">
                 <img class="image" :src="productDetails.image"/>
                 <div class="toggle">
@@ -26,21 +26,21 @@
                 <button class="btn-full">{{addToBag}}</button>
             </div>
         </main>
-        <footer-tpl></footer-tpl>
+        <c-footer></c-footer>
     </div>
 </template>
 
 <script>
-    import search from '../components/search/Search.vue';
-    import headerTpl from '../components/header/Header.vue';
-    import footerTpl from '../components/footer/Footer.vue';
+    import cSearch from '../components/search/Search.vue';
+    import cHeader from '../components/header/Header.vue';
+    import cFooter from '../components/footer/Footer.vue';
 
     const productPage = {
-        name: 'product-page',
+        name: 'product-view',
         components: {
-            search,
-            headerTpl,
-            footerTpl
+            cSearch,
+            cHeader,
+            cFooter
         },
         methods: {
             getProductDetails() {
