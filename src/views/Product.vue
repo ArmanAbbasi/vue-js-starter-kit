@@ -31,9 +31,9 @@
 </template>
 
 <script>
-    import search from './../components/search/search.vue';
-    import headerTpl from './../components/header/header.vue';
-    import footerTpl from './../components/footer/footer.vue';
+    import search from '../components/search/Search.vue';
+    import headerTpl from '../components/header/Header.vue';
+    import footerTpl from '../components/footer/Footer.vue';
 
     const productPage = {
         name: 'product-page',

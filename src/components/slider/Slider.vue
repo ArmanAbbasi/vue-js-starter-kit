@@ -1,7 +1,7 @@
 <template>
     <div aria-busy="false" role="slider" aria-valuemin="1" aria-valuemax="2" aria-valuenow="1" class="slide-container">
         <div class="slide-holder" ref="slidesHolder" style="transform: translateX(0);">
-            <router-link v-for="(item, $index) in items" :data-index="$index" :to="item.url" class="slide" :style="{backgroundImage: 'url(' + item.image + ')'}">
+            <router-link v-for="item in items" :to="item.url" class="slide" :style="{backgroundImage: 'url(' + item.image + ')'}">
                 <h2 class="slide-title">{{item.title}}</h2>
                 <p class="slide-description">{{item.description}}</p>
             </router-link>

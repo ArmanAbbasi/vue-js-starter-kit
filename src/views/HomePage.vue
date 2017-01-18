@@ -14,12 +14,12 @@
 </template>
 
 <script>
-    import productBlock from './../components/product-block/product-block.vue';
-    import headerTpl from './../components/header/header.vue';
-    import footerTpl from './../components/footer/footer.vue';
-    import slider from '../components/slider/slider.vue';
-    import newsletter from './../components/newsletter/newsletter.vue';
-    import search from './../components/search/search.vue';
+    import productBlock from '../components/productListingItem/ProductListingItem.vue';
+    import headerTpl from '../components/header/Header.vue';
+    import footerTpl from '../components/footer/Footer.vue';
+    import slider from '../components/slider/Slider.vue';
+    import newsletter from '../components/newsletter/Newsletter.vue';
+    import search from '../components/search/Search.vue';
 
     const homePage = {
         name: 'home-page',
