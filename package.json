@@ -4,7 +4,7 @@
     "author": "Arman Abbasi",
     "private": true,
     "scripts": {
-        "dev": "node server",
+        "dev": "gulp sass && gulp watch && node server",
         "prod": "cross-env NODE_ENV=production node server",
         "build": "rimraf dist && gulp sass && npm run build:client && npm run build:server",
         "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.config.js --progress --hide-modules",
