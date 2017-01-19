@@ -16,14 +16,13 @@
             'items'
         ],
         beforeUpdate() {
-            const self = this;
             this.sliderEl = this.$el;
 
             this.timer = setInterval(() => {
-                self.nextSlide();
-                self.sliderEl.setAttribute('aria-busy', 'true');
+                this.nextSlide();
+                this.sliderEl.setAttribute('aria-busy', 'true');
                 setTimeout(() => {
-                    self.sliderEl.setAttribute('aria-busy', 'false');
+                    this.sliderEl.setAttribute('aria-busy', 'false');
                 }, 1000);
             }, 3000);
         },
