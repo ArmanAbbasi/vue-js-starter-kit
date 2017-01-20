@@ -2,7 +2,7 @@
     "name": "VueJsStarterKit",
     "description": "A VueJS starter kit. I couldn't find any full examples, so I made one.",
     "author": "Arman Abbasi",
-    "private": true,
+    "license": "GPL-3.0",
     "scripts": {
         "dev": "gulp sass && gulp watch | node server",
         "prod": "cross-env NODE_ENV=production node server",
@@ -73,5 +73,12 @@
         "webpack-dev-server": "^2.1.0-beta.11",
         "webpack-hot-middleware": "^2.15.0",
         "webpack-node-externals": "^1.5.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArmanAbbasi/VueJsStarterKit.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ArmanAbbasi/VueJsStarterKit/issues"
     }
 }
