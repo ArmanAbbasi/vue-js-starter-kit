@@ -9,12 +9,6 @@ A <a href="https://vuejs.org/">VueJS</a> starter kit using NodeJS, WebPack, Gulp
 >Installation instructions
 
 ``` bash
-# Clone the repository
-git clone git@github.com:ArmanAbbasi/VueJsStarterKit.git
-
-# Navigate to the folder
-cd VueJsStarterKit
-
 # Install the packages
 npm install
 
