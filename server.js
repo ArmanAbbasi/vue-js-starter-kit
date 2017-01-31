@@ -7,6 +7,7 @@ const staticAsset = require('static-asset');
 const zLib = require('zlib');
 const serialize = require('serialize-javascript');
 const resolve = file => path.resolve(__dirname, file);
+const vueServerRenderer = require('vue-server-renderer');
 
 const MAX_CACHE_SIZE = 1000;
 const MAX_CACHE_AGE_MS = 1000 * 60 * 15;
@@ -23,7 +24,7 @@ const BUILD_FOLDER = 'build';
 let generatedHtml;
 let renderer;
 
-const vueJsServerRenderer = (bundle) => require('vue-server-renderer').createBundleRenderer(bundle, {
+const vueJsServerRenderer = (bundle) => vueServerRenderer.createBundleRenderer(bundle, {
     cache: require('lru-cache')({
         max: MAX_CACHE_SIZE,
         maxAge: MAX_CACHE_AGE_MS
@@ -85,7 +86,6 @@ app.get('*', (req, res) => {
     });
 
     renderStream.on('end', () => {
-        // Parse initial store state to global namespace
         if (context.initialState) {
             res.write(`<script>window.__INITIAL_STATE__=${serialize(context.initialState, { isJSON: true })}</script>`);
         }
