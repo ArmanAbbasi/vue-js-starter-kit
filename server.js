@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
-const favicon = require('serve-favicon');
 const compression = require('compression');
 const serialize = require('serialize-javascript');
 const resolve = file => path.resolve(__dirname, file);
@@ -13,7 +12,6 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 const PORT = process.env.PORT || 8080;
 const DISTRIBUTION_FOLDER = 'dist';
 const BUILD_FOLDER = 'build';
-const FAV_ICON_LOCATION = `./${DISTRIBUTION_FOLDER}/images/logo.png`;
 const SERVER_INFO =
     `express/${require('express/package.json').version} ` +
     `vue-server-renderer/${require('vue-server-renderer/package.json').version}`;
@@ -59,7 +57,6 @@ const serve = (path, cache) => express.static(resolve(path), {
 });
 
 app.use(compression({ threshold: 0 }));
-app.use(favicon(FAV_ICON_LOCATION));
 app.use('/service-worker.js', serve(`./${DISTRIBUTION_FOLDER}/service-worker.js`));
 app.use(`/${DISTRIBUTION_FOLDER}`, serve(`./${DISTRIBUTION_FOLDER}`));
 
