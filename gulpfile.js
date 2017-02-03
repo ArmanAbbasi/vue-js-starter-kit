@@ -8,12 +8,12 @@ const SASS_OPTIONS = {
 
 let gulp = require('gulp');
 let sass = require('gulp-sass');
-let autoprefixer = require('gulp-autoprefixer');
+let autoPreFixer = require('gulp-autoprefixer');
 
 gulp.task(SASS_TASK_NAME, () => {
     return gulp.src(SASS_PATH_LOCATION)
         .pipe(sass(SASS_OPTIONS).on('error', sass.logError))
-        .pipe(autoprefixer())
+        .pipe(autoPreFixer())
         .pipe(gulp.dest(SASS_BUILD_PATH))
 });
 

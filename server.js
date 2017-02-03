@@ -54,6 +54,11 @@ if (IS_PROD) {
 }
 
 /**
+ * Making it easier for our app to find the views
+ * */
+app.set('views', __dirname + '/views');
+
+/**
  * Gzip compression is a must
  * */
 app.use(compression({
@@ -66,6 +71,7 @@ app.use(compression({
  * */
 app.use(`/${DISTRIBUTION_FOLDER}`, staticAsset(path.resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
 app.use(`/${DISTRIBUTION_FOLDER}`, express.static(path.resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
+app.use('/service-worker.js', express.static((`./${DISTRIBUTION_FOLDER}/service-worker.js`)));
 
 /**
  * Do following with all incoming GET requests

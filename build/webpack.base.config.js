@@ -1,6 +1,7 @@
 const path = require('path');
-const vueConfig = require('./vue-loader.config');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: '#source-map',
@@ -29,11 +30,28 @@ module.exports = {
             rules: [{
                 test: /\.vue$/,
                 loader: 'vue-loader',
-                options: vueConfig
+                options: {
+                    preserveWhitespace: false,
+                    postcss: [
+                        require('autoprefixer')({
+                            browsers: ['last 3 versions']
+                        })
+                    ],
+                    loaders: {
+                        sass: ExtractTextPlugin.extract({
+                            loader: 'css-loader!sass-loader',
+                            fallbackLoader: 'vue-style-loader' // vue-loader dependency
+                        })
+                    }
+                }
             }, {
                 test: /\.json$/,
                 exclude: /node_modules/,
                 loader: 'json-loader'
+            }, {
+                test: /\.scss/,
+                exclude: /node_modules/,
+                loader: 'sass-loader'
             }, {
                 test: /\.js$/,
                 loader: 'buble-loader',
@@ -59,6 +77,15 @@ module.exports = {
             from: './src/data/**/*',
             to: 'data',
             flatten: true
-        }])
+        }]),
+        new ExtractTextPlugin('main.[hash].css'),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
     ]
 };
