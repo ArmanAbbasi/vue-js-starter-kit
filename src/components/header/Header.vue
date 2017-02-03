@@ -7,8 +7,11 @@
     </header>
 </template>
 
-<script>
+<script type="text/babel">
     export default {
         name: 'c-header'
     };
 </script>
+
+<style lang="sass" rel="stylesheet/scss">
+</style>

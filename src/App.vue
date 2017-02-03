@@ -6,7 +6,7 @@
     </div>
 </template>
 
-<style lang="sass" scoped>
+<style lang="sass" rel="stylesheet/scss">
     .fade-enter-active,
     .fade-leave-active {
         transition: opacity 200ms;

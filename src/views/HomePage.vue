@@ -13,7 +13,7 @@
     </div>
 </template>
 
-<script>
+<script type="text/babel">
     import cProductList from '../components/productList/ProductList.vue';
     import cHeader from '../components/header/Header.vue';
     import cFooter from '../components/footer/Footer.vue';

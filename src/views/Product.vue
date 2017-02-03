@@ -1,33 +1,3 @@
-<script type="text/babel">
-    import cSearch from '../components/search/Search.vue';
-    import cHeader from '../components/header/Header.vue';
-    import cFooter from '../components/footer/Footer.vue';
-
-    const productPage = {
-        name: 'product-view',
-        components: {
-            cSearch,
-            cHeader,
-            cFooter
-        },
-        methods: {
-            getProductDetails() {
-                this.$store.dispatch('getProductDetails', this.$route.params.prodId);
-            }
-        },
-        computed: {
-            productDetails() {
-                return this.$store.state.productDetails;
-            }
-        },
-        created() {
-            this.getProductDetails();
-        }
-    };
-
-    export default productPage;
-</script>
-
 <template>
     <div>
         <c-header></c-header>
@@ -59,6 +29,36 @@
         <c-footer></c-footer>
     </div>
 </template>
+
+<script type="text/babel">
+    import cSearch from '../components/search/Search.vue';
+    import cHeader from '../components/header/Header.vue';
+    import cFooter from '../components/footer/Footer.vue';
+
+    const productPage = {
+        name: 'product-view',
+        components: {
+            cSearch,
+            cHeader,
+            cFooter
+        },
+        methods: {
+            getProductDetails() {
+                this.$store.dispatch('getProductDetails', this.$route.params.prodId);
+            }
+        },
+        computed: {
+            productDetails() {
+                return this.$store.state.productDetails;
+            }
+        },
+        created() {
+            this.getProductDetails();
+        }
+    };
+
+    export default productPage;
+</script>
 
 <style lang="sass" rel="stylesheet/scss">
     .product-container {

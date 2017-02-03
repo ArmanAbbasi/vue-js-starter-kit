@@ -5,8 +5,11 @@
     </div>
 </template>
 
-<script>
+<script type="text/babel">
     export default {
         name: 'c-newsletter'
     };
 </script>
+
+<style lang="sass" rel="stylesheet/scss">
+</style>

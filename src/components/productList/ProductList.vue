@@ -5,7 +5,7 @@
     </router-link>
 </template>
 
-<script>
+<script type="text/babel">
     export default {
         name: 'c-product-list',
         props: [
@@ -13,3 +13,6 @@
         ]
     };
 </script>
+
+<style lang="sass" rel="stylesheet/scss">
+</style>

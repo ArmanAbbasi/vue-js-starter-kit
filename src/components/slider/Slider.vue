@@ -9,7 +9,7 @@
     </div>
 </template>
 
-<script>
+<script type="text/babel">
     export default {
         name: 'c-slider',
         props: [
@@ -43,3 +43,6 @@
         }
     };
 </script>
+
+<style lang="sass" rel="stylesheet/scss">
+</style>
