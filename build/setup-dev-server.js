@@ -51,5 +51,5 @@ module.exports = (app, opts) => {
         stats.errors.forEach(err => console.error(err));
         stats.warnings.forEach(err => console.warn(err));
         opts.bundleUpdated(mfs.readFileSync(outputPath, 'utf-8'));
-    })
+    });
 };

@@ -26,47 +26,47 @@ module.exports = {
         }
     },
     module: {
-        noParse: /es6-promise\.js$/, // avoid webpack shimming process
-            rules: [{
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    preserveWhitespace: false,
-                    postcss: [
-                        require('autoprefixer')({
-                            browsers: ['last 3 versions']
-                        })
-                    ],
-                    loaders: {
-                        sass: ExtractTextPlugin.extract({
-                            use: 'css-loader!sass-loader',
-                            fallback: 'vue-style-loader'
-                        })
-                    }
+        rules: [{
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            options: {
+                preserveWhitespace: false,
+                postcss: [
+                    require('autoprefixer')({
+                        browsers: ['last 3 versions']
+                    })
+                ],
+                loaders: {
+                    sass: ExtractTextPlugin.extract({
+                        use: 'css-loader!sass-loader',
+                        fallback: 'vue-style-loader'
+                    })
                 }
-            }, {
-                test: /\.json$/,
-                exclude: /node_modules/,
-                loader: 'json-loader'
-            }, {
-                test: /\.scss/,
-                exclude: /node_modules/,
-                loader: 'sass-loader'
-            }, {
-                test: /\.js$/,
-                loader: 'buble-loader',
-                exclude: /node_modules/,
-                options: {
-                    objectAssign: 'Object.assign'
-                }
-            }, {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: '[name].[ext]?[hash]'
-                }
-            }]
+            }
+        }, {
+            test: /\.json$/,
+            exclude: /node_modules/,
+            loader: 'json-loader'
+        }, {
+            test: /\.scss/,
+            exclude: /node_modules/,
+            loader: 'sass-loader'
+        }, {
+            test: /\.js$/,
+            loader: 'buble-loader',
+            exclude: /node_modules/,
+            options: {
+                objectAssign: 'Object.assign'
+            }
+        }, {
+            test: /\.(png|jpg|gif|svg)$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: '[name].[ext]?[hash]'
+            }
+        }],
+        noParse: /es6-promise\.js$/ // avoid webpack shimming process
     },
     plugins: [
         new CopyWebpackPlugin([{

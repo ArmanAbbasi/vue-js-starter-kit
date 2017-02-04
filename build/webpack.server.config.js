@@ -1,6 +1,6 @@
 const webpack = require('webpack');
-const base = require('./webpack.base.config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const base = require('./webpack.base.config');
 
 module.exports = Object.assign({}, base, {
     target: 'node',
