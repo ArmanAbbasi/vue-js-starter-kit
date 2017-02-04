@@ -13,7 +13,8 @@ const config = Object.assign({}, base, {
         // strip comments in Vue code
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-            'process.env.VUE_ENV': '"client"'
+            'process.env.VUE_ENV': '"client"',
+            'process.BROWSER': true
         }),
         // extract vendor chunks for better caching
         new webpack.optimize.CommonsChunkPlugin({

@@ -39,8 +39,8 @@ module.exports = {
                     ],
                     loaders: {
                         sass: ExtractTextPlugin.extract({
-                            loader: 'css-loader!sass-loader',
-                            fallbackLoader: 'vue-style-loader' // vue-loader dependency
+                            use: 'css-loader!sass-loader',
+                            fallback: 'vue-style-loader'
                         })
                     }
                 }
@@ -78,7 +78,7 @@ module.exports = {
             to: 'data',
             flatten: true
         }]),
-        new ExtractTextPlugin('main.[hash].css'),
+        new ExtractTextPlugin({filename: '[name].[hash].css', allChunks: true}),
         new webpack.LoaderOptionsPlugin({
             minimize: true
         }),

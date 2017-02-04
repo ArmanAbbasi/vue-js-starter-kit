@@ -11,7 +11,7 @@ module.exports = (app, opts) => {
 
     clientConfig.plugins.push(
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     );
 
     // dev middleware

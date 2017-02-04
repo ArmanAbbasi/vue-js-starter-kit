@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const base = require('./webpack.base.config');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = Object.assign({}, base, {
     target: 'node',
@@ -16,9 +17,11 @@ module.exports = Object.assign({}, base, {
     },
     externals: Object.keys(require('../package.json').dependencies),
     plugins: [
+        new ExtractTextPlugin({filename: '[name].[hash].css', allChunks: true}),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-            'process.env.VUE_ENV': '"server"'
+            'process.env.VUE_ENV': '"server"',
+            'process.BROWSER': false
         })
     ]
 });
