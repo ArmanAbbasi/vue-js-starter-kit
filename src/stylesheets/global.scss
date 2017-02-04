@@ -1,0 +1,8 @@
+@import 'helpers/base';
+
+.no-js-msg {
+    background-color: $brandColorRed;
+    text-align: center;
+    padding: 1rem;
+    font-size: $fontSizeBase;
+}

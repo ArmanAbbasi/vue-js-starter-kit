@@ -29,6 +29,7 @@ module.exports = {
         rules: [{
             test: /\.vue$/,
             loader: 'vue-loader',
+            exclude: /node_modules/,
             options: {
                 preserveWhitespace: false,
                 postcss: [
@@ -44,27 +45,18 @@ module.exports = {
                 }
             }
         }, {
-            test: /\.json$/,
-            exclude: /node_modules/,
-            loader: 'json-loader'
-        }, {
-            test: /\.scss/,
-            exclude: /node_modules/,
-            loader: 'sass-loader'
-        }, {
             test: /\.js$/,
-            loader: 'buble-loader',
+            loader: 'babel-loader',
             exclude: /node_modules/,
-            options: {
-                objectAssign: 'Object.assign'
+            query: {
+                presets: ['es2015', 'stage-3']
             }
         }, {
-            test: /\.(png|jpg|gif|svg)$/,
-            loader: 'url-loader',
-            options: {
-                limit: 10000,
-                name: '[name].[ext]?[hash]'
-            }
+            test: /global\.scss$/,
+            loader: ExtractTextPlugin.extract({
+                use: 'css-loader!postcss-loader!sass-loader'
+            }),
+            exclude: /node_modules/
         }],
         noParse: /es6-promise\.js$/ // avoid webpack shimming process
     },

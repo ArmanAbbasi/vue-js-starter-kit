@@ -12,4 +12,18 @@
 </script>
 
 <style lang="sass" rel="stylesheet/scss">
+    @import '../../stylesheets/helpers/variables';
+
+    .newsletter {
+        width: 100%;
+        font-size: $fontSizeSmall;
+        text-align: center;
+
+        .text {
+            padding: 1.5rem 0;
+            background-color: $brandColorDark;
+            width: 100%;
+            font-size: 100%;
+        }
+    }
 </style>

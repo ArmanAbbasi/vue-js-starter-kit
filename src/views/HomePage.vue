@@ -57,5 +57,4 @@
 </script>
 
 <style lang="sass" rel="stylesheet/scss">
-    @import  './../stylesheets/main.scss';
 </style>

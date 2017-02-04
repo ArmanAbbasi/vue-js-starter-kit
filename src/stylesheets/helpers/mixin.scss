@@ -15,19 +15,8 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='#00ff8989', GradientType=0 );
 }
 
-@mixin font-smoothing($value) {
-    $val1: $value;
-    $val2: $value;
-
-    @if $value == 'antialiased' {
-        $val1: $value;
-        $val2: grayscale;
-    } @else {
-        $val1: $value;
-        $val2: $value;
-    }
-
-    -webkit-font-smoothing: $val1;
-    -moz-osx-font-smoothing: $val2;
-    font-smoothing: $val1;
+@mixin font-smoothing() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
 }

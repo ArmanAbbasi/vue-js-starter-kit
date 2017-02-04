@@ -45,7 +45,8 @@
 </script>
 
 <style lang="sass" rel="stylesheet/scss">
-    @import '../../stylesheets/helpers/base.scss';
+    @import '../../stylesheets/helpers/variables';
+    @import '../../stylesheets/helpers/mixin';
 
     .slide-container {
         display: block;

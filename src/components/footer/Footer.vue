@@ -9,4 +9,16 @@
 </script>
 
 <style lang="sass" rel="stylesheet/scss">
+    @import '../../stylesheets/helpers/variables';
+    footer {
+        font-size: $fontSizeVerySmall;
+        text-align: center;
+        padding: 1rem 0;
+        color: $brandColorDark;
+
+        .footer-link {
+            color: $brandColorDark;
+            text-decoration: underline;
+        }
+    }
 </style>
