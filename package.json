@@ -1,6 +1,6 @@
 {
-  "name": "VueJsStarterKit",
-  "description": "A VueJS starter kit. I couldn't find any full examples, so I made one.",
+  "name": "vue-js-starter-kit",
+  "description": "A VueJS starter kit for a commercial production site.",
   "author": "Arman Abbasi",
   "license": "GPL-3.0",
   "scripts": {
@@ -75,9 +75,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArmanAbbasi/VueJsStarterKit.git"
+    "url": "git@github.com:ArmanAbbasi/vue-js-starter-kit.git"
   },
   "bugs": {
-    "url": "https://github.com/ArmanAbbasi/VueJsStarterKit/issues"
+    "url": "https://github.com/ArmanAbbasi/vue-js-starter-kit/issues"
   }
 }
