@@ -4,7 +4,7 @@
     "author": "Arman Abbasi",
     "license": "GPL-3.0",
     "scripts": {
-        "dev": "gulp sass && gulp watch | node server",
+        "dev": "node server",
         "prod": "cross-env NODE_ENV=production node server",
         "build": "rimraf dist && gulp sass && npm run build:client && npm run build:server",
         "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.config.js --progress --hide-modules",
@@ -48,9 +48,6 @@
         "eslint-plugin-react": "^6.8.0",
         "extract-text-webpack-plugin": "^v2.0.0-rc.3",
         "file-loader": "^0.9.0",
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^3.1.1",
-        "gulp-sass": "^3.1.0",
         "html-minifier-webpack-plugin": "^1.0.1",
         "html-webpack-plugin": "^2.26.0",
         "json-loader": "^0.5.4",
