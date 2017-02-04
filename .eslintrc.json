@@ -3,7 +3,10 @@
     "extends": "airbnb",
 
     "globals": {
-        "require": true
+        "require": true,
+        "describe": true,
+        "it": true,
+        "expect": true
     },
 
     "env": {
