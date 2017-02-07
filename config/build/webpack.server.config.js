@@ -15,7 +15,7 @@ module.exports = Object.assign({}, base, {
             'create-api': './create-api-server.js'
         })
     },
-    externals: Object.keys(require('../package.json').dependencies),
+    externals: Object.keys(require('../../package.json').dependencies),
     plugins: [
         new ExtractTextPlugin({filename: '[name].[hash].css', allChunks: true}),
         new webpack.DefinePlugin({

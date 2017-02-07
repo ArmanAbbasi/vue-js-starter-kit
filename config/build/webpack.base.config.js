@@ -22,7 +22,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'public': path.resolve(__dirname, '../public')
+            'config': path.resolve(__dirname, '../'),
+            'base': path.resolve(__dirname, '../../')
         }
     },
     module: {

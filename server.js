@@ -19,7 +19,7 @@ const TEMPLATE_APP_MARKET = '<app/>';
 const IS_PROD = process.env.NODE_ENV === 'production';
 
 const DISTRIBUTION_FOLDER = 'dist';
-const BUILD_FOLDER = 'build';
+const BUILD_FOLDER = 'config/build';
 
 let generatedHtml;
 let renderer;
