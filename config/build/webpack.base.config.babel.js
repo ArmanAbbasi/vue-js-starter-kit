@@ -1,9 +1,9 @@
-const path = require('path');
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-module.exports = {
+const base = {
     devtool: 'source-map',
     entry: {
         app: './src/client-entry.js',
@@ -23,7 +23,7 @@ module.exports = {
     resolve: {
         alias: {
             'config': path.resolve(__dirname, '../'),
-            'base': path.resolve(__dirname, '../../')
+            'base': path.resolve(__dirname, '../..')
         }
     },
     module: {
@@ -97,3 +97,5 @@ module.exports = {
         })
     ]
 };
+
+export default base;

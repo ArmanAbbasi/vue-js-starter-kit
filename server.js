@@ -1,3 +1,12 @@
+require('babel-core/register')({
+    presets: [
+        'stage-3',
+        'es2015'
+    ],
+    ignore: /node_modules/
+});
+require('./config/build/setup-dev-server');
+
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
@@ -43,7 +52,7 @@ if (IS_PROD) {
     renderer = vueJsServerRenderer(fs.readFileSync(resolve(`./${DISTRIBUTION_FOLDER}/server-bundle.js`), 'utf-8'));
     generatedHtml = findPlaceholderInTemplateAndReplace(fs.readFileSync(resolve(`./${DISTRIBUTION_FOLDER}/index.html`), 'utf-8'));
 } else {
-    require(`./${BUILD_FOLDER}/setup-dev-server`)(app, {
+    require(`./${BUILD_FOLDER}/setup-dev-server`).default(app, {
         bundleUpdated: bundle => {
             renderer = vueJsServerRenderer(bundle);
         },

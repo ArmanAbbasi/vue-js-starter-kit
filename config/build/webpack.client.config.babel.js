@@ -1,9 +1,9 @@
-const webpack = require('webpack');
-const base = require('./webpack.base.config');
-const HTMLPlugin = require('html-webpack-plugin');
-const SWPreCachePlugin = require('sw-precache-webpack-plugin');
+import webpack from 'webpack';
+import base from './webpack.base.config.babel';
+import HTMLPlugin from 'html-webpack-plugin';
+import SWPreCachePlugin from 'sw-precache-webpack-plugin';
 
-const config = Object.assign({}, base, {
+const client = Object.assign({}, base, {
     resolve: {
         alias: Object.assign({}, base.resolve.alias, {
             'create-api': './create-api-client.js'
@@ -28,7 +28,7 @@ const config = Object.assign({}, base, {
 });
 
 if (process.env.NODE_ENV === 'production') {
-    config.plugins.push(
+    client.plugins.push(
         new SWPreCachePlugin({
             cacheId: 'vue-hn',
             filename: 'service-worker.js',
@@ -38,4 +38,4 @@ if (process.env.NODE_ENV === 'production') {
     );
 }
 
-module.exports = config;
+export default client;

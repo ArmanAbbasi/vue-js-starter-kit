@@ -7,12 +7,13 @@
     "dev": "node server",
     "prod": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist && npm run build:client && npm run build:server",
-    "build:client": "cross-env NODE_ENV=production webpack --config config/build/webpack.client.config.js --progress --hide-modules",
-    "build:server": "cross-env NODE_ENV=production webpack --config config/build/webpack.server.config.js --progress --hide-modules",
+    "build:client": "cross-env NODE_ENV=production webpack --config config/build/webpack.client.config.babel.js --progress --hide-modules",
+    "build:server": "cross-env NODE_ENV=production webpack --config config/build/webpack.server.config.babel.js --progress --hide-modules",
     "test": "mocha-webpack --webpack-config webpack.test.config.js 'test/**/*Spec.js'"
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "babel-preset-stage-0": "^6.22.0",
     "compression": "^1.6.2",
     "express": "^4.14.1",
     "lru-cache": "^4.0.2",
