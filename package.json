@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
-    "babel-preset-stage-0": "^6.22.0",
     "compression": "^1.6.2",
     "express": "^4.14.1",
     "lru-cache": "^4.0.2",
@@ -42,7 +41,6 @@
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
     "eslint": "^3.12.2",
-    "eslint-config-airbnb": "^13.0.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.0.2",

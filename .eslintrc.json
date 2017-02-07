@@ -1,6 +1,5 @@
 {
     "root": true,
-    "extends": "airbnb",
 
     "globals": {
         "require": true,
