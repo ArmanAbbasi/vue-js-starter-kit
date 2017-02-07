@@ -1,10 +1,4 @@
-require('babel-core/register')({
-    presets: [
-        'stage-3',
-        'es2015'
-    ],
-    ignore: /node_modules/
-});
+require('babel-core/register')();
 require('./config/build/setup-dev-server');
 
 const fs = require('fs');
