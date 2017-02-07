@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    devtool: '#source-map',
+    devtool: 'source-map',
     entry: {
         app: './src/client-entry.js',
         vendor: [
@@ -35,12 +35,17 @@ module.exports = {
                 preserveWhitespace: false,
                 postcss: [
                     require('autoprefixer')({
-                        browsers: ['last 3 versions']
+                        browsers: [
+                            'last 3 versions'
+                        ]
                     })
                 ],
                 loaders: {
                     sass: ExtractTextPlugin.extract({
-                        use: 'css-loader!sass-loader',
+                        use: [
+                            'css-loader',
+                            'sass-loader'
+                        ],
                         fallback: 'vue-style-loader'
                     })
                 }
@@ -50,16 +55,23 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
-                presets: ['es2015', 'stage-3']
+                presets: [
+                    'es2015',
+                    'stage-3'
+                ]
             }
         }, {
             test: /global\.scss$/,
             loader: ExtractTextPlugin.extract({
-                use: 'css-loader!postcss-loader!sass-loader'
+                use: [
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
             }),
             exclude: /node_modules/
         }],
-        noParse: /es6-promise\.js$/ // avoid webpack shimming process
+        noParse: /es6-promise\.js$/
     },
     plugins: [
         new CopyWebpackPlugin([{
@@ -71,7 +83,10 @@ module.exports = {
             to: 'data',
             flatten: true
         }]),
-        new ExtractTextPlugin({filename: '[name].[hash].css', allChunks: true}),
+        new ExtractTextPlugin({
+            filename: '[name].[hash].css',
+            allChunks: true
+        }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
         }),
