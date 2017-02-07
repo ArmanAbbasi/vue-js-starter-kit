@@ -6,7 +6,8 @@
         "require": true,
         "describe": true,
         "it": true,
-        "expect": true
+        "expect": true,
+        "__INITIAL_STATE__": true
     },
 
     "env": {

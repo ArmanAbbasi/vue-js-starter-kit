@@ -1,5 +1,6 @@
 import nodeExternals from 'webpack-node-externals';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
 export default {
     target: 'node',
@@ -14,7 +15,7 @@ export default {
             options: {
                 preserveWhitespace: false,
                 postcss: [
-                    require('autoprefixer')({
+                    autoprefixer({
                         browsers: [
                             'last 3 versions'
                         ]
