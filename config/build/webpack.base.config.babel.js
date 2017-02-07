@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
 const base = {
     devtool: 'source-map',
@@ -16,7 +17,7 @@ const base = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, '../../dist'),
         publicPath: '/dist/',
         filename: '[name].[chunkhash].js'
     },
@@ -34,7 +35,7 @@ const base = {
             options: {
                 preserveWhitespace: false,
                 postcss: [
-                    require('autoprefixer')({
+                    autoprefixer({
                         browsers: [
                             'last 3 versions'
                         ]
