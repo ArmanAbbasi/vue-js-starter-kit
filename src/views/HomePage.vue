@@ -14,12 +14,12 @@
 </template>
 
 <script type="text/babel">
-    import cProductList from '../components/productList/ProductList.vue';
-    import cHeader from '../components/header/Header.vue';
-    import cFooter from '../components/footer/Footer.vue';
-    import cSlider from '../components/slider/Slider.vue';
-    import cNewsletter from '../components/newsletter/Newsletter.vue';
-    import cSearch from '../components/search/Search.vue';
+    import cProductList from 'components/productList/ProductList.vue';
+    import cHeader from 'components/header/Header.vue';
+    import cFooter from 'components/footer/Footer.vue';
+    import cSlider from 'components/slider/Slider.vue';
+    import cNewsletter from 'components/newsletter/Newsletter.vue';
+    import cSearch from 'components/search/Search.vue';
 
     const homePage = {
         name: 'home-page-view',

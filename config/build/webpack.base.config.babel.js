@@ -24,6 +24,9 @@ const base = {
     resolve: {
         alias: {
             'config': path.resolve(__dirname, '../'),
+            'dist': path.resolve(__dirname, '../../dist'),
+            'components': path.resolve(__dirname, '../../src/components'),
+            'views': path.resolve(__dirname, '../../src/views'),
             'base': path.resolve(__dirname, '../..')
         }
     },

@@ -40,8 +40,8 @@ const findPlaceholderInTemplateAndReplace = (template) => {
 };
 
 if (IS_PROD) {
-    renderer = vueJsServerRenderer(fs.readFileSync(resolve(`./dist/server-bundle.js`), 'utf-8'));
-    generatedHtml = findPlaceholderInTemplateAndReplace(fs.readFileSync(resolve(`./dist/index.html`), 'utf-8'));
+    renderer = vueJsServerRenderer(fs.readFileSync(resolve('dist/server-bundle.js'), 'utf-8'));
+    generatedHtml = findPlaceholderInTemplateAndReplace(fs.readFileSync(resolve('dist/index.html'), 'utf-8'));
 } else {
     devServer(app, {
         bundleUpdated: bundle => {
@@ -69,9 +69,9 @@ app.set('views', __dirname + '/views');
 /**
  * Indicating our static folder and setting caching duration
  * */
-app.use(`/dist`, staticAsset(resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
-app.use(`/dist`, express.static(resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
-app.use('/service-worker.js', express.static((`./dist/service-worker.js`)));
+app.use(`/dist`, staticAsset(resolve('dist/'), { maxAge: ONE_YEAR_IN_MILLIS }));
+app.use(`/dist`, express.static(resolve('dist/'), { maxAge: ONE_YEAR_IN_MILLIS }));
+app.use('/service-worker.js', express.static(resolve('dist/service-worker.js')));
 
 /**
  * Do following with all incoming GET requests

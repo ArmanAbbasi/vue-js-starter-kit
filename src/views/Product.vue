@@ -31,9 +31,9 @@
 </template>
 
 <script type="text/babel">
-    import cSearch from '../components/search/Search.vue';
-    import cHeader from '../components/header/Header.vue';
-    import cFooter from '../components/footer/Footer.vue';
+    import cSearch from 'components/search/Search.vue';
+    import cHeader from 'components/header/Header.vue';
+    import cFooter from 'components/footer/Footer.vue';
 
     const productPage = {
         name: 'product-view',
