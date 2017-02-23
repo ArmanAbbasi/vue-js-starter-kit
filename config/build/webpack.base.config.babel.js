@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import autoprefixer from 'autoprefixer';
+import autoPreFixer from 'autoprefixer';
 
 const base = {
     devtool: 'source-map',
@@ -38,7 +38,7 @@ const base = {
             options: {
                 preserveWhitespace: false,
                 postcss: [
-                    autoprefixer({
+                    autoPreFixer({
                         browsers: [
                             'last 3 versions'
                         ]
