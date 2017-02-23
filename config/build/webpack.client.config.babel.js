@@ -10,19 +10,16 @@ const client = Object.assign({}, base, {
         })
     },
     plugins: (base.plugins || []).concat([
-        // strip comments in Vue code
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
             'process.env.VUE_ENV': '"client"',
             'process.BROWSER': true
         }),
-        // extract vendor chunks for better caching
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor'
         }),
-        // generate output HTML
         new HTMLPlugin({
-            template: 'src/index.template.html'
+            template: 'src/views/layout/index.template.html'
         })
     ])
 });
