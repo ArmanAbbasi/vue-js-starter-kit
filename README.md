@@ -4,7 +4,7 @@ A <a href="https://vuejs.org/">VueJS</a> starter kit using NodeJS, WebPack, NPM,
 
 >Demo of the mobile view
 
-![Demo gif](https://github.com/ArmanAbbasi/VueJsStarterKit/blob/master/demo.gif)
+![Mobile Demo gif](/demo/mobile.gif)
 
 >Installation instructions
 
