@@ -27,6 +27,7 @@ const base = {
             'dist': path.resolve(__dirname, '../dist'),
             'components': path.resolve(__dirname, '../src/components'),
             'views': path.resolve(__dirname, '../src/views'),
+            'stylesheets': path.resolve(__dirname, '../src/stylesheets'),
             'base': path.resolve(__dirname, '../')
         }
     },

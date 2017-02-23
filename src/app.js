@@ -4,7 +4,7 @@ import store from './store';
 import router from './router';
 import { sync } from 'vuex-router-sync';
 import labels from './data/labels.json';
-import './stylesheets/global.scss';
+import 'stylesheets/global.scss';
 
 sync(store, router);
 
