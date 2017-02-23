@@ -4,8 +4,8 @@
   "author": "Arman Abbasi",
   "license": "GPL-3.0",
   "scripts": {
-    "dev": "node server",
-    "prod": "cross-env NODE_ENV=production node server",
+    "dev": "node ./src/init",
+    "prod": "cross-env NODE_ENV=production npm run dev",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --config config/build/webpack.client.config.babel.js --progress --hide-modules",
     "build:server": "cross-env NODE_ENV=production webpack --config config/build/webpack.server.config.babel.js --progress --hide-modules",
