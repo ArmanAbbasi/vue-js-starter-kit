@@ -8,7 +8,7 @@ import lruCache from 'lru-cache';
 import { resolve } from 'path';
 import { createBundleRenderer } from 'vue-server-renderer';
 
-import devServer from '../../config/build/setup-dev-server';
+import devServer from 'config/build/setup-dev-server';
 
 const MAX_CACHE_SIZE = 1000;
 const MAX_CACHE_AGE_MS = 1000 * 60 * 15;
