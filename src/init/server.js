@@ -1,11 +1,11 @@
 import fs from 'fs';
-import path from 'path';
 import express from 'express';
 import compression from 'compression';
 import staticAsset from 'static-asset';
 import zLib from 'zlib';
 import serialize from 'serialize-javascript';
 import lruCache from 'lru-cache';
+import { resolve } from 'path';
 import { createBundleRenderer } from 'vue-server-renderer';
 
 import devServer from '../../config/build/setup-dev-server';
@@ -22,7 +22,6 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 const DISTRIBUTION_FOLDER = 'dist';
 
 const app = express();
-const resolve = file => path.resolve(__dirname, file);
 
 let generatedHtml;
 let renderer;
@@ -72,8 +71,8 @@ app.use(compression({
 /**
  * Indicating our static folder and setting caching duration
  * */
-app.use(`/${DISTRIBUTION_FOLDER}`, staticAsset(path.resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
-app.use(`/${DISTRIBUTION_FOLDER}`, express.static(path.resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
+app.use(`/${DISTRIBUTION_FOLDER}`, staticAsset(resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
+app.use(`/${DISTRIBUTION_FOLDER}`, express.static(resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
 app.use('/service-worker.js', express.static((`./${DISTRIBUTION_FOLDER}/service-worker.js`)));
 
 /**
