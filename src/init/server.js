@@ -1,13 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const express = require('express');
-const app = express();
-const compression = require('compression');
-const staticAsset = require('static-asset');
-const zLib = require('zlib');
-const serialize = require('serialize-javascript');
-const resolve = file => path.resolve(__dirname, file);
-const vueServerRenderer = require('vue-server-renderer');
+import fs from 'fs';
+import path from 'path';
+import express from 'express';
+import compression from 'compression';
+import staticAsset from 'static-asset';
+import zLib from 'zlib';
+import serialize from 'serialize-javascript';
+import lruCache from 'lru-cache';
+import { createBundleRenderer } from 'vue-server-renderer';
+
+import devServer from '../../config/build/setup-dev-server';
 
 const MAX_CACHE_SIZE = 1000;
 const MAX_CACHE_AGE_MS = 1000 * 60 * 15;
@@ -19,13 +20,15 @@ const TEMPLATE_APP_MARKET = '<app/>';
 const IS_PROD = process.env.NODE_ENV === 'production';
 
 const DISTRIBUTION_FOLDER = 'dist';
-const BUILD_FOLDER = 'config/build';
+
+const app = express();
+const resolve = file => path.resolve(__dirname, file);
 
 let generatedHtml;
 let renderer;
 
-const vueJsServerRenderer = (bundle) => vueServerRenderer.createBundleRenderer(bundle, {
-    cache: require('lru-cache')({
+const vueJsServerRenderer = (bundle) => createBundleRenderer(bundle, {
+    cache: lruCache({
         max: MAX_CACHE_SIZE,
         maxAge: MAX_CACHE_AGE_MS
     })
@@ -43,7 +46,7 @@ if (IS_PROD) {
     renderer = vueJsServerRenderer(fs.readFileSync(resolve(`./${DISTRIBUTION_FOLDER}/server-bundle.js`), 'utf-8'));
     generatedHtml = findPlaceholderInTemplateAndReplace(fs.readFileSync(resolve(`./${DISTRIBUTION_FOLDER}/index.html`), 'utf-8'));
 } else {
-    require(`../../${BUILD_FOLDER}/setup-dev-server`).default(app, {
+    devServer(app, {
         bundleUpdated: bundle => {
             renderer = vueJsServerRenderer(bundle);
         },
@@ -113,6 +116,4 @@ app.get('*', (req, res) => {
 /**
  * Run app at port
  * */
-app.listen(APP_PORT_NUM, () => {
-    console.log(`Server started at http://localhost:${APP_PORT_NUM}`);
-});
+app.listen(APP_PORT_NUM, () => console.log(`Server running at http://localhost:${APP_PORT_NUM}`));
