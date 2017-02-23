@@ -7,9 +7,9 @@
     "dev": "node ./src/init",
     "prod": "cross-env NODE_ENV=production npm run dev",
     "build": "rimraf dist && npm run build:client && npm run build:server",
-    "build:client": "cross-env NODE_ENV=production webpack --config config/build/webpack.client.config.babel.js --progress --hide-modules",
-    "build:server": "cross-env NODE_ENV=production webpack --config config/build/webpack.server.config.babel.js --progress --hide-modules",
-    "test": "mocha-webpack --webpack-config config/build/webpack.test.config.js 'test/**/*Spec.js'"
+    "build:client": "cross-env NODE_ENV=production webpack --config config/webpack.client.config.babel.js --progress --hide-modules",
+    "build:server": "cross-env NODE_ENV=production webpack --config config/webpack.server.config.babel.js --progress --hide-modules",
+    "test": "mocha-webpack --webpack-config config/webpack.test.config.js 'test/**/*Spec.js'"
   },
   "dependencies": {
     "axios": "^0.15.3",

@@ -6,6 +6,14 @@
     </div>
 </template>
 
+<script type="text/babel">
+    const App = {
+
+    };
+
+    export default App;
+</script>
+
 <style lang="sass" rel="stylesheet/scss">
     .fade-enter-active,
     .fade-leave-active {

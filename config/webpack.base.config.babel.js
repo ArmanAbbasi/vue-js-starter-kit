@@ -7,7 +7,7 @@ import autoPreFixer from 'autoprefixer';
 const base = {
     devtool: 'source-map',
     entry: {
-        app: './src/client-entry.js',
+        app: './src/init/client-entry.js',
         vendor: [
             'es6-promise',
             'vue',
@@ -23,11 +23,11 @@ const base = {
     },
     resolve: {
         alias: {
-            'config': path.resolve(__dirname, '../'),
-            'dist': path.resolve(__dirname, '../../dist'),
-            'components': path.resolve(__dirname, '../../src/components'),
-            'views': path.resolve(__dirname, '../../src/views'),
-            'base': path.resolve(__dirname, '../..')
+            'config': path.resolve(__dirname),
+            'dist': path.resolve(__dirname, '../dist'),
+            'components': path.resolve(__dirname, '../src/components'),
+            'views': path.resolve(__dirname, '../src/views'),
+            'base': path.resolve(__dirname, '../')
         }
     },
     module: {

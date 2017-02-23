@@ -1,12 +1,12 @@
 import webpack from 'webpack';
 import base from './webpack.base.config.babel';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import { dependencies } from '../../package.json';
+import { dependencies } from '../package.json';
 
 const server = Object.assign({}, base, {
     target: 'node',
     devtool: false,
-    entry: './src/server-entry.js',
+    entry: './src/init/server-entry.js',
     output: Object.assign({}, base.output, {
         filename: 'server-bundle.js',
         libraryTarget: 'commonjs2'

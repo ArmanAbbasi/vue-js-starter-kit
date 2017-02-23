@@ -5,6 +5,6 @@
     "ignore": "/node_modules/",
     "plugins": [
         [ "transform-vue-jsx" ],
-        [ "babel-plugin-webpack-alias", { "config": "./config/build/webpack.base.config.babel.js" } ]
+        [ "babel-plugin-webpack-alias", { "config": "./config/webpack.base.config.babel.js" } ]
     ]
 }
