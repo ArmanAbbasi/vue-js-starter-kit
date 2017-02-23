@@ -19,8 +19,6 @@ const APP_PORT_NUM = process.env.PORT || 3000;
 const TEMPLATE_APP_MARKET = '<app/>';
 const IS_PROD = process.env.NODE_ENV === 'production';
 
-const DISTRIBUTION_FOLDER = 'dist';
-
 const app = express();
 
 let generatedHtml;
@@ -42,8 +40,8 @@ const findPlaceholderInTemplateAndReplace = (template) => {
 };
 
 if (IS_PROD) {
-    renderer = vueJsServerRenderer(fs.readFileSync(resolve(`./${DISTRIBUTION_FOLDER}/server-bundle.js`), 'utf-8'));
-    generatedHtml = findPlaceholderInTemplateAndReplace(fs.readFileSync(resolve(`./${DISTRIBUTION_FOLDER}/index.html`), 'utf-8'));
+    renderer = vueJsServerRenderer(fs.readFileSync(resolve(`./dist/server-bundle.js`), 'utf-8'));
+    generatedHtml = findPlaceholderInTemplateAndReplace(fs.readFileSync(resolve(`./dist/index.html`), 'utf-8'));
 } else {
     devServer(app, {
         bundleUpdated: bundle => {
@@ -56,12 +54,7 @@ if (IS_PROD) {
 }
 
 /**
- * Making it easier for our app to find the views
- * */
-app.set('views', __dirname + '/views');
-
-/**
- * Gzip compression is a must
+ * Gzip compression
  * */
 app.use(compression({
     threshold: 0,
@@ -69,11 +62,16 @@ app.use(compression({
 }));
 
 /**
+ * Making it easier for our app to find the views
+ * */
+app.set('views', __dirname + '/views');
+
+/**
  * Indicating our static folder and setting caching duration
  * */
-app.use(`/${DISTRIBUTION_FOLDER}`, staticAsset(resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
-app.use(`/${DISTRIBUTION_FOLDER}`, express.static(resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
-app.use('/service-worker.js', express.static((`./${DISTRIBUTION_FOLDER}/service-worker.js`)));
+app.use(`/dist`, staticAsset(resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
+app.use(`/dist`, express.static(resolve(__dirname) + '/dist/', { maxAge: ONE_YEAR_IN_MILLIS }));
+app.use('/service-worker.js', express.static((`./dist/service-worker.js`)));
 
 /**
  * Do following with all incoming GET requests
